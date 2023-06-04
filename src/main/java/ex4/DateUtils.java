@@ -3,20 +3,16 @@ package ex4;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateUtils {
-    private static SimpleDateFormat formateur;
+public class DateUtils extends DateMethods {
 
-    public DateUtils() {
-        formateur = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    @Override
+    public String formatDefault(Date date) {
+        return DateMethods.getFormateur().format(date);
     }
 
-    public static String formatDefault(Date date) {
-        return formateur.format(date);
+    @Override
+    public String format(String pattern, Date date) {
+        DateMethods.setFormateur(new SimpleDateFormat(pattern));
+        return DateUtils.getFormateur().format(date);
     }
-
-    public static String format(String pattern, Date date) {
-        DateUtils.formateur = new SimpleDateFormat(pattern);
-        return DateUtils.formateur.format(date);
-    }
-
 }
