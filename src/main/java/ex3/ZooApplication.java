@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class ZooApplication {
 
 	public static void main(String[] args) {
-		ArrayList<Animal> zooPlace = new ArrayList<>();
-		Zoo zoo = new Zoo("Thoiry", zooPlace);
+		ArrayList<Animal> zooAnimal = new ArrayList<>();
+		Zoo zoo = new Zoo("Thoiry", zooAnimal);
 
 		zoo.addAnimal(new Animal("Gazelle", "MAMMIFERE", "HERBIVORE"));
 		zoo.addAnimal(new Animal("Zèbre", "MAMIFERE", "HERBIVORE"));
